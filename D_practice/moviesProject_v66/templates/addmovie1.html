@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/movie_design.css' %}">
+</head>
+<body>
+
+<div style="background-color: rgba(0,0,0,0.8);border-radius:10px;border:2px solid black;height:70px;width: 100%;margin-top: -2px;">
+    <h1 style="color: floralwhite;text-align: center; padding: 1px"><i>Add Movie</i></h1></div>
+<br><br>
+<div class="container">
+  <form method="post">
+    <div class="row">
+      <div class="col-25">
+        <label for="rdate">Release Date:</label>
+      </div>
+      <div class="col-75">
+          <span id="rdate">{{ form.rdate }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="movie">Movie Name:</label>
+      </div>
+      <div class="col-75">
+       <span id="movie">{{ form.movie }}</span>
+      </div>
+    </div>
+       <div class="row">
+      <div class="col-25">
+        <label for="hero">Hero Name:</label>
+      </div>
+      <div class="col-75">
+       <span id="hero">{{ form.hero }}</span>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="heroine">Heroine Name:</label>
+      </div>
+      <div class="col-75">
+       <span id="heroine">{{ form.heroine }}</span>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="rate">Rating:</label>
+      </div>
+      <div class="col-75">
+       <span id="rate">{{ form.rating }}</span>
+      </div>
+    </div>
+  {% csrf_token %}
+      <br>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

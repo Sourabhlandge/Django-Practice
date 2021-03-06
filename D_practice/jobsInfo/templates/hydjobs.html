@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/design.css' %}">
+<style>
+    table,thead,th{
+        background: cornflowerblue;
+    }
+     table tr:nth-of-type(even)
+{
+	background: antiquewhite;
+}
+     table tr:nth-of-type(odd)
+{
+	background: aliceblue;
+}
+    </style>
+</head>
+<body>
+<header><h1 align="centre">HYDERABAD JOBS INFO</h1></header><hr>
+{% if jobs_list %}
+    <table border="1">
+    <thead>
+    <th>S_NO</th>
+    <th>Date</th>
+    <th>Company</th>
+    <th>Title</th>
+    <th>Eligibility</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Mobile_NO</th>
+    </thead>
+    {% for jobs in jobs_list %}
+    <tr>
+    <td>{{ jobs.id }}</td>
+    <td>{{ jobs.date }}</td>
+    <td>{{ jobs.company }}</td>
+    <td>{{ jobs.title }}</td>
+    <td>{{ jobs.eligibility }}</td>
+    <td>{{ jobs.address }}</td>
+    <td>{{ jobs.email }}</td>
+    <td>{{ jobs.mobile_no }}</td>
+    </tr>
+    {% endfor %}
+    
+    </table>
+    {% else %}
+    <p>NO jobs found in Hyderabad</p>
+
+{% endif %}
+</body>
+</html>

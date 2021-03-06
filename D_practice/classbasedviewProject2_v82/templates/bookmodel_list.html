@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+    <h1>Books Information</h1><hr>
+    {% for book in list_of_books  %}
+        <ul>
+        <li>Book Title:{{ book.title }}</li>
+        <li>Book Author:{{ book.author }}</li>
+        <li>Number Of Pages :{{ book.page }}</li>
+        <li>Book Price:{{ book.price }}</li>
+        </ul>
+
+    {% endfor %}
+
+
+{% endblock %}

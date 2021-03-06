@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/movie_design.css" %}">
+</head>
+<body>
+<div style="background-color: #020202;height:70px;width: 100%;margin-top: -20px;"><h1 style="color: floralwhite;text-align: center; padding: 25px">Add Movie</h1></div>
+<div class="container" align="center">
+<form method="post">
+     {% if messages %}
+        {% for message in messages %}
+            <h4 style="color: lightcyan">{{ message }}</h4>
+        {% endfor %}
+
+    {% endif %}
+    {{ form.as_p }}
+    {% csrf_token %}
+
+    <button type="submit" class="btn  btn-primary" >Add Movie</button>
+<br><br>
+    <p><a class="btn btn-primary btn-lg" href="/listmovies/" role="button">List Movies</a>&nbsp;</p>
+</form>
+</div>
+
+
+{% comment %}{% if request.POST %}
+    {{ name }}
+    {{ enroll }}
+    {{ email }}
+    {{ feedback }}{% endcomment %}
+
+
+</body>
+</html>

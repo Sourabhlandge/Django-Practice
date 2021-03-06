@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h1>Thanks For Providing Information</h1>
+</header><hr>
+<ul>
+    {% for key,value in request.session.items %}
+        <li><h2>{{ key|upper }}:{{ value|title }}</h2></li>
+
+    {% endfor %}
+
+</ul>
+
+
+</body>
+</html>

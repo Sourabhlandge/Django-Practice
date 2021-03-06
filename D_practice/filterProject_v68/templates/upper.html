@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load custom filters %}
+{% for data in data_list %}
+    <ul>
+    <li>{{ data.name|add:"Engineer" }}</li>
+    <li>{{ data.subject|upper }}</li>
+    <li>{{ data.department|title }}</li>
+    <li>{{ data.department|trun:4 }}</li>
+    <li>{{ data.department|truncatechars:5 }}</li>
+    <li>{{ data.date|date:"y-m-d" }}</li>
+    <li>{{ data.date|timesince }}</li>
+    </ul><hr>
+
+{% endfor %}
+
+
+</body>
+</html>

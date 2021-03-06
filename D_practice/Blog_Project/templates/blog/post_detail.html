@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+    {% block title_blog %}{{ post.title }}{% endblock %}
+
+    {% block content %}
+        <h1>SOURABH's BLOG</h1>
+            <h2>{{ post.title }}</h2>
+            <p id="date">Published on {{ post.publish }} by {{ post.author|title }}</p>
+            {{ post.body|linebreaks }}
+        <div class="container" align="center">
+            <a href="{% url 'email_form' post.id %}" class="btn btn-lg btn-warning">Share Post By Mail</a>
+        </div>
+    {% endblock %}

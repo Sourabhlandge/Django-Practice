@@ -1,0 +1,36 @@
+<html>
+<head>
+    <h1>WELCOME</h1>
+    <style>
+        input{
+            width: 70%;
+            height: 40px;
+            margin-left: 90px;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+<input type="text" placeholder="Enter Name"><br><br>
+<input type="number" placeholder="Enter Marks"><hr>
+<h2>Server Date & Time:{{ date_msg }}</h2>
+<table border="1">
+
+    <tr>
+    <th>E_Name</th>
+    <th>E_ID</th>
+    <th>E_ADD</th>
+    <th>E_SALARY</th>
+    </tr>
+    {% for x in data %}
+    <tr>
+    <th>{{ x.ename }}</th>
+    <th>{{ x.eno }}</th>
+    <th>{{ x.eadd }}</th>
+    <th>{{ x.esalary }}</th>
+    </tr>
+    {% endfor %}
+
+    </table>
+</body>
+</html>

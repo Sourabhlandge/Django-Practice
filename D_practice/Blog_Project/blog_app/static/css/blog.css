@@ -1,0 +1,26 @@
+.content{
+    width:60%;
+    float: left;
+    padding: 0 0 0 30px;
+    background: lightcyan;
+    height: 100%;
+}
+.sidebar{
+    width: 40%;
+    float: right;
+    padding: 10px;
+    background: khaki;
+    height: 100%;
+}
+h1{
+    text-align: center;
+    border-bottom: 1px solid red;
+    padding-bottom: 10px;
+}
+body{
+    background: lightcyan;
+}
+#date{
+    font-size: 15px;
+    color: crimson;
+}

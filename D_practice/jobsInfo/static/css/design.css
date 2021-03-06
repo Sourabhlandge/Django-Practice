@@ -1,0 +1,14 @@
+.container .jumbotron{
+	margin-top:50px;
+	background: aqua;
+	color:white;
+	width:80%;
+}
+h1{
+	alignment: center;
+	color: blue;
+}
+table tr:nth-of-type(even)
+{
+	background: aqua;
+}

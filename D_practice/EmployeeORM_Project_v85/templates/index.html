@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+    <h1>Employee Information DashBoard</h1><hr>
+    <a href="/calculations" class="btn btn-lg btn-warning">Click Here</a>
+    <table border="1">
+    <thead>
+    <th>Employee NO</th>
+    <th>Employee Name</th>
+    <th>Employee Salary</th>
+    <th>Employee Address</th>
+    </thead>
+    {% for emp in employees %}
+    <tr>
+    <td>{{ emp.eno }}</td>
+    <td>{{ emp.ename }}</td>
+    <td>{{ emp.esalary }}</td>
+    <td>{{ emp.eaddress }}</td>
+    </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}

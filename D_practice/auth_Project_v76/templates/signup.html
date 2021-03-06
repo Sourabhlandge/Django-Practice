@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+
+    <div class="container" align="center">
+        <h1>SignUp To Enjoy Facilities</h1>
+        <h2>Please Login Again</h2><br>
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="SignUp">
+        </form>
+
+
+
+    </div>
+{% endblock %}

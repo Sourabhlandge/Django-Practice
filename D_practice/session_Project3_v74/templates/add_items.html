@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+    <h1>Add Items Form</h1>
+    <form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary btn-large" value="Add Item"><br><br>
+    <a href="/display" class="btn btn-primary" role="button">Display Iems</a>
+    </form>
+
+{% endblock %}

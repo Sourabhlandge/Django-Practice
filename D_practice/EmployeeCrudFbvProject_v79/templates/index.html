@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+    <h1>Employee Information DashBoard</h1><hr>
+    <table border="1">
+    <thead>
+    <th>Employee NO</th>
+    <th>Employee Name</th>
+    <th>Employee Salary</th>
+    <th>Employee Address</th>
+    <th>Actions</th>
+    </thead>
+    {% for emp in employees %}
+    <tr>
+    <td>{{ emp.eno }}</td>
+    <td>{{ emp.ename }}</td>
+    <td>{{ emp.esalary }}</td>
+    <td>{{ emp.eaddress }}</td>
+        <td><form method="post" action="{% url 'update' %}">
+            {% csrf_token %}<input type="hidden" name="u_id" value="{{ emp.id }}"><button type="submit">Update</button> </form>/<a href="/delete/?id={{ emp.id }}">Delete</a> </td>
+    </tr>
+    {% endfor %}
+
+    </table>
+    <br><br>
+    <a href="/create" class="btn btn-success btn-lg">Insert New Employee</a>
+
+{% endblock %}

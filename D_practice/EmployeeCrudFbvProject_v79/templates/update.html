@@ -4,6 +4,7 @@
     <h1>Employee Update Information </h1><hr>
     <form method="post" action="{% url 'save' %}">
     {% csrf_token %}
+   <input type="hidden" name="id" value="{{ employee.id }}">
    Employee No:<input type="text" name="eno" value="{{ employee.eno }}"><br>
    Employee Name:<input type="text" name="ename" value="{{ employee.ename }}"><br>
    Employee Salary:<input type="number" name="esal" value="{{ employee.esalary }}"><br>

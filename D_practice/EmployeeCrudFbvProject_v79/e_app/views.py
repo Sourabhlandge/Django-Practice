@@ -15,7 +15,7 @@ def create_view(request):
         form = EmoplyeeForm(request.POST)
         if form.is_valid():
             form.save()
-        return render(request,"index.html")
+        return redirect("/")
     return render(request,"create.html",{'form':form})
 
 
@@ -32,11 +32,12 @@ def update(request):
 
 
 def save_update_view(request):
+    id = request.POST.get("id")
     eno = request.POST.get("eno")
     ename = request.POST.get("ename")
     esal = request.POST.get("esal")
     eadd = request.POST.get("eadd")
-    updated_employee = Employee(eno=eno, ename=ename, esalary=esal, eaddress=eadd).save()
+    updated_employee = Employee(id=id, eno=eno, ename=ename, esalary=esal, eaddress=eadd).save()
     employees = Employee.objects.all()
     my_dict = {'employees': employees}
     return render(request, "index.html", context=my_dict)
